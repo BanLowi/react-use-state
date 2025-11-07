@@ -9,8 +9,6 @@ export default function Main({ languages }) {
 
                 <Navbar languages={languages} />
 
-
-
             </div>
 
         </main>
