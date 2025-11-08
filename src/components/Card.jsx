@@ -1,9 +1,9 @@
-export default function Card({ title, description }) {
+export default function Card({ languages }) {
 
     return (
         <div className="card">
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <h3>{languages.title}</h3>
+            <p>{languages.description}</p>
         </div>
     )
 }
