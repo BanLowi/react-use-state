@@ -1,5 +1,12 @@
 @import url("bootstrap");
 
 .current {
-    background-color: red;
+    background-color: #ffc107 !important;
+    color: black;
+    border: solid 1px #ffc107;
+
+    &:hover {
+        border: solid 1px #ffc107;
+        color: lightslategrey;
+    }
 }

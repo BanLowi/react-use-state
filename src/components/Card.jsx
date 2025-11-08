@@ -1,8 +1,8 @@
 export default function Card({ language }) {
 
     return (
-        <div className="card">
-            <h3>{language.title}</h3>
+        <div className="card p-2">
+            <h5>{language.title}</h5>
             <p>{language.description}</p>
         </div>
     )

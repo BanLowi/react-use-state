@@ -29,7 +29,7 @@ export default function Navbar({ languages }) {
                         <button
                             key={language.id}
                             onClick={() => handleClick(language.id)}
-                            className={`${btnId == language.id ? "current" : ""}`}
+                            className={`${btnId == language.id ? "current" : ""} btn btn-primary m-1`}
                         >{language.title}</button>
                     ))
                 }
