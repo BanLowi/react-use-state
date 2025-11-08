@@ -13,7 +13,6 @@ export default function Navbar({ languages }) {
         }
     }
 
-
     return (
         <div>
 
@@ -36,12 +35,19 @@ export default function Navbar({ languages }) {
                 }
             </nav >
 
-            {
+
+            {btnId === 0 ? (
+                <p>Seleziona un linguaggio!</p>
+            ) : (
+
+
                 languages.map(language => {
 
-                    return language.id === btnId ? (<Card key={language.id} language={language} />) : ""
+                    return btnId === language.id ? (<Card key={language.id} language={language} />) : ""
                 })
-            }
+
+            )}
+
 
         </div>
     )
