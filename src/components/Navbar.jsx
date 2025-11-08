@@ -3,11 +3,15 @@ import Card from "./Card"
 
 export default function Navbar({ languages }) {
 
-    const [btnId, setBtnId] = useState(null)
+    const [btnId, setBtnId] = useState(0)
 
-    const selectedCard = languages.find((language) => {
-        return language.id === setBtnId
-    })
+    function handleClick(id) {
+        if (btnId === id) {
+            setBtnId(0)
+        } else {
+            setBtnId(id)
+        }
+    }
 
 
     return (
@@ -25,19 +29,19 @@ export default function Navbar({ languages }) {
                     languages.map(language => (
                         <button
                             key={language.id}
-                            onClick={() => setBtnId(language.id)}
+                            onClick={() => handleClick(language.id)}
                             className={`${btnId == language.id ? "current" : ""}`}
                         >{language.title}</button>
                     ))
                 }
             </nav >
 
-            {selectedCard && (
-                <Card
-                    title={languages.title}
-                    description={languages.description}
-                />
-            )}
+            {
+                languages.map(language => {
+
+                    return language.id === btnId ? (<Card key={language.id} language={language} />) : ""
+                })
+            }
 
         </div>
     )
